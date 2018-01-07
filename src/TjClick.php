@@ -12,9 +12,9 @@ class TjClick
 
     public function __construct()
     {
-        $conn = new Redis();
-        $conn->connect($this->host, $this->prot);
-        $redis->auth($this->password);
+        $this->conn = new Redis();
+        $this->conn->connect($this->host, $this->prot);
+        $this->conn->auth($this->password);
     }
 
     public function refreshClick($key)
