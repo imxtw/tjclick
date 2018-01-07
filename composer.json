@@ -1,0 +1,18 @@
+{
+  "name": "newdun/tjclick",
+  "description": "tongji click",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "xutingwei",
+      "email": "xutingwei@newdun.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "newdun\\": "src/"
+    }
+  }
+}
