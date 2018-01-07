@@ -8,7 +8,7 @@ class TjClick
     public $type;
     public $password;
     public $host;
-    public $prot;
+    public $port;
 
     private $conn;
 
@@ -16,7 +16,7 @@ class TjClick
     {
         if ($this->type == 'redis') {
             $this->conn = new Redis();
-            $this->conn->connect($this->host, $this->prot);
+            $this->conn->connect($this->host, $this->port);
             $this->conn->auth($this->password);
         } else {
             // TODO : 其他驱动
