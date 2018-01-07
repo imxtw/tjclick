@@ -4,6 +4,8 @@ namespace newdun;
 
 class TjClick
 {
+
+    public $type;
     public $password;
     public $host;
     public $prot;
@@ -12,9 +14,14 @@ class TjClick
 
     public function __construct()
     {
-        $this->conn = new Redis();
-        $this->conn->connect($this->host, $this->prot);
-        $this->conn->auth($this->password);
+        if ($this->type == 'redis') {
+            $this->conn = new Redis();
+            $this->conn->connect($this->host, $this->prot);
+            $this->conn->auth($this->password);
+        } else {
+            // TODO : 其他驱动
+        }
+
     }
 
     public function refreshClick($key)
